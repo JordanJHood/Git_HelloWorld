@@ -1,0 +1,15 @@
+---
+title: "repl_git_example"
+author: "Jordan J Hood"
+date: "04/12/2020"
+output: html_document
+---
+```{r}
+Lamda <- function(X,k){
+  ifelse(class(X)[1]=="matrix" ,
+    ifelse(dim(X)[1]>=k & k>0,return(sum(t(X[1:k,]) %*% X[1:k,])),
+           stop("K must be Positive and Smaller than the ncol of X")),stop("Requires Class Matrix"))
+}
+
+```
+
